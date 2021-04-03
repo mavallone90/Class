@@ -25,9 +25,10 @@ function renderStories(data) {
         var theArticles = document.createElement("div");
         theArticles.className = 'movietalk';
         theArticles.innerHTML = 
-            `<h2>${story.display_title}</h2>
+            `<h2><a href="${story.link.url}">${story.display_title}</a></h2>
             <h3>Review By ${story.byline}</h3>
-            <h3>Rated ${story.mpaa_rating}</h3>`
+            <h3>Opening ${story.opening_date}</h3>
+            <img src="${story.multimedia.src}" alt="oops"></img>`
         ;
         // console.log(theArticles);
         just_url.append(theArticles);
