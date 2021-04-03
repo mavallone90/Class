@@ -4,7 +4,7 @@ const type = "all";
 const movieStuff = `https://api.nytimes.com/svc/movies/v2/reviews/${type}.json?api-key=${nytapi}`;
 
 const just_url = document.querySelector(".API_URL");
-just_url.innerHTML = `<a href="${movieStuff}">LINK</a>`;
+just_url.innerHTML = `<a href="${movieStuff}">LINK to the APIs .json file</a>`;
 
 // const stuff = document.querySelector(".stuff");
 // stuff.innerHTML = movieStuff.map( function(item){return item.status})

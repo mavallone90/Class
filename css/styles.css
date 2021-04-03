@@ -1,0 +1,19 @@
+h1 {
+    color: blue;
+}
+
+h2 {
+    color: chocolate;
+    margin-bottom: 3px;
+
+}
+
+h3 {
+    color: cornflowerblue;
+    margin: 0px;
+    padding-left: 30px;
+}
+
+img {
+    margin-top: 10px;
+}
