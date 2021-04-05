@@ -4,7 +4,7 @@ const type = "all";
 const movieStuff = `https://api.nytimes.com/svc/movies/v2/reviews/${type}.json?api-key=${nytapi}`;
 
 const just_url = document.querySelector(".API_URL");
-just_url.innerHTML = `<a href="${movieStuff}">LINK to the APIs .json file</a>`;
+just_url.innerHTML = `<a href="${movieStuff}">API</a>`;
 
 // const stuff = document.querySelector(".stuff");
 // stuff.innerHTML = movieStuff.map( function(item){return item.status})
@@ -24,13 +24,14 @@ function renderStories(data) {
         // console.log(story)
         var theArticles = document.createElement("div");
         theArticles.className = 'movietalk';
+        var withnullDate = story.opening_date
         theArticles.innerHTML = 
-            `<h2><a href="${story.link.url}">${story.display_title}</a></h2>
+            `<img src="${story.multimedia.src}" alt="oops"></img>
+            <div><h2><a href="${story.link.url}">${story.display_title ? story.display_title : "uhhhh idk"}</a></h2>
             <h3>Review By ${story.byline}</h3>
-            <h3>Opening ${story.opening_date}</h3>
-            <img src="${story.multimedia.src}" alt="oops"></img>`
+            <h3>Opening ${story.opening_date ? story.opening_date : "N/A"}</h3></div>`
         ;
         // console.log(theArticles);
-        just_url.append(theArticles);
+        just_url.prepend(theArticles);
     })
 };

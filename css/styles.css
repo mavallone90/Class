@@ -1,19 +1,57 @@
+body {
+    background-image: url(/img/bg2.jpeg);
+    background-repeat: repeat;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    /* background-color: #7699D4; */
+   }
+
 h1 {
-    color: blue;
+    color: #480355;
+    text-align: center;
 }
 
 h2 {
-    color: chocolate;
+    color:#264753;
     margin-bottom: 3px;
+    font-size: 20px;
+}
 
+h2 a:link, a:visited {
+    color: #405579;
+}
+
+h2 a:hover {
+    color: #B8D8E7;
 }
 
 h3 {
-    color: cornflowerblue;
+    color: #480355;
     margin: 0px;
     padding-left: 30px;
+    font-size: 15px;
 }
 
 img {
-    margin-top: 10px;
+    margin: 10px;
+}
+
+.movietalk {
+    display: grid;
+    background-color: rgba(148, 72, 188, 0.8);
+    grid-template-columns: 1fr 1fr;
+    width: 555px;
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 35px;   
+}
+
+.movietalk img {
+    width: 250px;;
+    padding-right: 20px;
+}
+
+.movietalk div {
+    width: 250px;
+    margin: 0px;
 }
