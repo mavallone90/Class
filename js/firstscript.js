@@ -1,6 +1,6 @@
 const root = document.querySelector(".site-wrap");
 const nytapi = "qa1UnMV3WkBkjX7RL1f8lJYTd9J86fPT";
-const type = "all";
+const type = "picks"; // could also be "all"
 const movieStuff = `https://api.nytimes.com/svc/movies/v2/reviews/${type}.json?api-key=${nytapi}`;
 
 const just_url = document.querySelector(".API_URL");
@@ -24,13 +24,13 @@ function renderStories(data) {
         // console.log(story)
         var theArticles = document.createElement("div");
         theArticles.className = 'movietalk';
-        var withnullDate = story.opening_date
         theArticles.innerHTML = 
             `<img src="${story.multimedia.src}" alt="oops"></img>
-            <div><h2><a href="${story.link.url}">${story.display_title ? story.display_title : "uhhhh idk"}</a></h2>
-            <h3>Review By ${story.byline}</h3>
-            <h3>Opening ${story.opening_date ? story.opening_date : "N/A"}</h3></div>`
-        ;
+            <div>
+                <h2><a href="${story.link.url}">${story.display_title ? story.display_title : "uhhhh idk"}</a></h2>
+                <h3>Review By ${story.byline}</h3>
+                <h3>Opening ${story.opening_date ? story.opening_date : "N/A"}</h3>
+            </div>`;
         // console.log(theArticles);
         just_url.prepend(theArticles);
     })
