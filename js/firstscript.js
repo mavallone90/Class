@@ -1,5 +1,6 @@
+import nytapi from "./key";
+
 const root = document.querySelector(".site-wrap");
-const nytapi = "qa1UnMV3WkBkjX7RL1f8lJYTd9J86fPT";
 const type = "picks"; // could also be "all"
 const movieStuff = `https://api.nytimes.com/svc/movies/v2/reviews/${type}.json?api-key=${nytapi}`;
 
@@ -16,22 +17,27 @@ just_url.innerHTML = `<a href="${movieStuff}">API</a>`;
 
 // passing to function
 fetch(movieStuff)
-    .then((response) => response.json())
-    .then((myJson) => renderStories(myJson));
+  .then((response) => response.json())
+  .then((myJson) => renderStories(myJson));
 
 function renderStories(data) {
-    data.results.forEach(function (story) {
-        // console.log(story)
-        var theArticles = document.createElement("div");
-        theArticles.className = 'movietalk';
-        theArticles.innerHTML = 
-            `<img src="${story.multimedia.src}" alt="oops"></img>
+  data.results.forEach(function (story) {
+    // console.log(story)
+    var theArticles = document.createElement("div");
+    theArticles.className = "movietalk";
+    theArticles.innerHTML = `<img src="${
+      story.multimedia.src
+    }" alt="oops"></img>
             <div>
-                <h2><a href="${story.link.url}">${story.display_title ? story.display_title : "uhhhh idk"}</a></h2>
+                <h2><a href="${story.link.url}">${
+      story.display_title ? story.display_title : "uhhhh idk"
+    }</a></h2>
                 <h3>Review By ${story.byline}</h3>
-                <h3>Opening ${story.opening_date ? story.opening_date : "N/A"}</h3>
+                <h3>Opening ${
+                  story.opening_date ? story.opening_date : "N/A"
+                }</h3>
             </div>`;
-        // console.log(theArticles);
-        just_url.prepend(theArticles);
-    })
-};
+    // console.log(theArticles);
+    just_url.prepend(theArticles);
+  });
+}
